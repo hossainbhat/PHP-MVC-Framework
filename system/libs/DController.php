@@ -6,7 +6,7 @@
 class DController{	
 	public function __construct()
 	{
-		echo "from parent Dcontroller";
+		// echo "from parent Dcontroller";
 	}
 }
 

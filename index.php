@@ -16,7 +16,7 @@ include_once('system/libs/DController.php');
 $url = isset($_GET['url']) ? $_GET['url'] : NULL;
 if($url != NULL){
 	$url = rtrim($url,'/');
-	$url = explode("/", $url);
+	$url = explode("/", filter_var($url,FILTER_SANITIZE_URL));
 }else{
 	unset($url);
 }
@@ -38,6 +38,11 @@ $controller = new $url['0']();
 		}
 	}
 }else{
+
+include('app/controllers/Index.php');
+
+$ctrl = new Index();
+$ctrl->home();
 
 }
 
