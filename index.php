@@ -14,19 +14,24 @@ include_once('system/libs/DController.php');
 
 
 $url = isset($_GET['url']) ? $_GET['url'] : NULL;
-$url = rtrim($url,'/');
-$url = explode("/", $url);
+if($url != NULL){
+	$url = rtrim($url,'/');
+	$url = explode("/", $url);
+}else{
+	unset($url);
+}
 
-if($url['0']){
+
+if(isset($url['0'])){
 include('app/controllers/'.$url['0'].'.php');
 
 $controller = new $url['0']();
 
-	if($url[2]){
+	if(isset($url[2])){
 		$method = $url[1];
 		$controller->$method($url[2]);
 	}else{
-		if($url[1]){
+		if(isset($url[1])){
 			$method = $url[1];
 		}else{
 
