@@ -1,10 +1,10 @@
-<?php include "inc/header.php"; ?>
 
 
 <?php 
 
 include_once('system/libs/Main.php');
 include_once('system/libs/DController.php');
+include_once('system/libs/Load.php');
 
 // $main = new Main();
 
@@ -59,7 +59,3 @@ $ctrl->home();
 
 
 ?>
-
-
-
-<?php include "inc/footer.php"; ?>

@@ -4,9 +4,12 @@
  * Dcontroller 
  */
 class DController{	
+
+	protected $load = array();
+
 	public function __construct()
 	{
-		// echo "from parent Dcontroller";
+		$this->load = new Load();
 	}
 }
 
